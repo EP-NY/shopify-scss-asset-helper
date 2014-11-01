@@ -1,0 +1,20 @@
+// Shopify SCSS Asset Helper
+// Created Friday, August 15 2014 by Joseph Bergdoll
+// www.osephj.com
+// @josephbergdoll on twitter
+
+@mixin font-file($asset-font-name) {
+  src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ');
+  src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ?#iefix ') format("embedded-opentype"),
+       url(' {{ "#{$asset-font-name}.woff" | asset_url }} ') format("woff"),
+       url(' {{ "#{$asset-font-name}.ttf" | asset_url }} ') format("truetype"),
+       url(' {{ "#{$asset-font-name}.svg" | asset_url }} ') format("svg");
+}
+
+@mixin background-file($asset-image-with-extension) {
+  background-image: url(' {{ "#{$asset-image-with-extension}" | asset_url }} ')
+}
+
+@mixin list-marker($list-marker-with-extension) {
+  list-style-image: url(' {{ "#{$list-marker-with-extension}" | asset_url }} ');
+}
